@@ -1,14 +1,14 @@
 # Binaries and Build Artifacts
-bin/
-dist/
-build/
+/bin/
+/dist/
+/build/
 *.rpm
 *.deb
 *.tar.gz
 *.pkg.tar.zst
 
-# Keys and Sensitive Secrets - NEVER COMMIT KEYS!
-keys/
+# Runtime Keys and Sensitive Secrets (Root keys folder only)
+/keys/
 *.key
 *.pem
 id_age
@@ -28,4 +28,3 @@ Thumbs.db
 .idea/
 *.swp
 *.swo
-
