@@ -1,0 +1,24 @@
+# Maintainer: Open Source Contributor <contributor@example.com>
+pkgname=agef
+pkgver=1.0.0
+pkgrel=1
+pkgdesc="High-performance recursive folder encryption and decryption using age"
+arch=('x86_64')
+url="https://github.com/your-username/agef"
+license=('MIT')
+makedepends=('go')
+source=("$pkgname-$pkgver.tar.gz::$url/archive/refs/tags/v$pkgver.tar.gz")
+sha256sums=('SKIP')
+
+build() {
+    cd "$pkgname-$pkgver"
+    export CGO_ENABLED=0
+    export GOFLAGS="-trimpath -mod=readonly -modcacherw"
+    go build -ldflags="-s -w" -o bin/agef ./cmd/agef
+}
+
+package() {
+    cd "$pkgname-$pkgver"
+    install -Dm755 bin/agef "$pkgdir/usr/bin/agef"
+    install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+}

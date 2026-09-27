@@ -1,0 +1,31 @@
+# Binaries and Build Artifacts
+bin/
+dist/
+build/
+*.rpm
+*.deb
+*.tar.gz
+*.pkg.tar.zst
+
+# Keys and Sensitive Secrets - NEVER COMMIT KEYS!
+keys/
+*.key
+*.pem
+id_age
+id_age.pub
+key.txt
+key.pub
+*.age
+
+# Test & Runtime Output Folders
+*_encrypted/
+*_decrypted/
+
+# OS and Editor Artifacts
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo
+
